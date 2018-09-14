@@ -1,0 +1,25 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLove > 0,
+                'list-group-item-danger': postLove < 0}" >	
+	<div class="container">
+		<div class="row">
+			<h2 class="col-md-8">
+				{{postTitle}}
+			</h2>
+			<div class="col-md-4" style="text-align:right;font-style:italic ">
+				{{postDateCreation | date :'dd/MM/yyyy'}} , {{postDateCreation | date :'shortTime'}}
+			</div>
+			<h6 class="col-md-12">
+				{{postContent}}
+			</h6>
+			<div class="col-md-12">
+				<button class="btn btn-success"
+					(click) = "changeLove(1);"
+				> Love it !</button> &nbsp;
+				<button class="btn btn-danger"
+				(click) = "changeLove(-1);"
+				> Don't love it ! </button>
+			</div>
+		</div>
+	</div>
+</li>
